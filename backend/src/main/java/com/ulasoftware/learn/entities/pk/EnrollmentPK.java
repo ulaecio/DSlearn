@@ -3,12 +3,12 @@ package com.ulasoftware.learn.entities.pk;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import com.ulasoftware.learn.entities.Offer;
 import com.ulasoftware.learn.entities.User;
-
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Embeddable
 public class EnrollmentPK implements Serializable{

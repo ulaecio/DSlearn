@@ -7,14 +7,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import com.ulasoftware.learn.entities.pk.EnrollmentPK;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.ulasoftware.learn.entities.pk.EnrollmentPK;
 
 @Entity
 @Table(name = "tb_enrollment")
