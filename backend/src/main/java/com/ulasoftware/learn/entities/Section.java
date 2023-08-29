@@ -1,6 +1,5 @@
 package com.ulasoftware.learn.entities;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -13,8 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_section")
-public class Section implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Section {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +30,7 @@ public class Section implements Serializable{
 	@JoinColumn(name = "prerequisite_id")
 	private Section prerequisite;
 	
-	public Section( ) {
-		
+	public Section() {
 	}
 
 	public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource,
@@ -102,10 +99,6 @@ public class Section implements Serializable{
 
 	public void setPrerequisite(Section prerequisite) {
 		this.prerequisite = prerequisite;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 	@Override

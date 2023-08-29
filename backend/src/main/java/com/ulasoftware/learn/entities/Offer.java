@@ -26,7 +26,7 @@ public class Offer {
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant startMoment;
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant endMoment;
 	
@@ -36,6 +36,9 @@ public class Offer {
 	
 	@OneToMany(mappedBy = "offer")
 	private List<Resource> resources = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "offer")
+	private List<Topic> topics = new ArrayList<>();	
 	
 	public Offer() {
 	}
@@ -88,9 +91,13 @@ public class Offer {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
-
+	
 	public List<Resource> getResources() {
 		return resources;
+	}
+
+	public List<Topic> getTopics() {
+		return topics;
 	}
 
 	@Override

@@ -1,6 +1,5 @@
 package com.ulasoftware.learn.entities;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -11,16 +10,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_role")
-public class Role implements Serializable{
-	private static final long serialVersionUID = 1L;
-	
+public class Role {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String authority;
 	
 	public Role() {
-		
 	}
 
 	public Role(Long id, String authority) {
@@ -47,7 +44,7 @@ public class Role implements Serializable{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(authority);
 	}
 
 	@Override
@@ -59,6 +56,6 @@ public class Role implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Role other = (Role) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(authority, other.authority);
 	}
 }
